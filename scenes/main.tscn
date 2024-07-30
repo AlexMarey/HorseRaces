@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://714e8w4rf8od"]
+
+[ext_resource type="Script" path="res://scenes/Main.gd" id="1_0my83"]
+[ext_resource type="PackedScene" uid="uid://jytrr8slxh71" path="res://scenes/game/card.tscn" id="2_4a6g7"]
+[ext_resource type="PackedScene" uid="uid://cg1cp2v76angy" path="res://scenes/game/horse.tscn" id="3_rrqf0"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_0my83")
+
+[node name="Card" parent="." instance=ExtResource("2_4a6g7")]
+position = Vector2(598, 532)
+
+[node name="Horse" parent="." instance=ExtResource("3_rrqf0")]
+position = Vector2(168, 132)

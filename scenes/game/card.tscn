@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://jytrr8slxh71"]
+
+[ext_resource type="Script" path="res://scenes/game/Card.gd" id="1_ic4m4"]
+[ext_resource type="Texture2D" uid="uid://bma0x2tnpg8c2" path="res://assets/Cards/cardBack_red2.png" id="2_8ncy3"]
+[ext_resource type="Texture2D" uid="uid://b0xtkuaw5i8cd" path="res://assets/Cards/cardClubs2.png" id="3_72pft"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5qwqr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8ncy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_72pft")
+}],
+"loop": false,
+"name": &"clubs2",
+"speed": 5.0
+}]
+
+[node name="Card" type="Node2D"]
+script = ExtResource("1_ic4m4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(218, 324)
+sprite_frames = SubResource("SpriteFrames_5qwqr")
+animation = &"clubs2"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
