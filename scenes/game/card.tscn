@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://jytrr8slxh71"]
+[gd_scene load_steps=6 format=3 uid="uid://jytrr8slxh71"]
 
 [ext_resource type="Script" path="res://scenes/game/Card.gd" id="1_ic4m4"]
-[ext_resource type="Texture2D" uid="uid://bma0x2tnpg8c2" path="res://assets/Cards/cardBack_red2.png" id="2_8ncy3"]
+[ext_resource type="Texture2D" uid="uid://bk1xrp3empvqg" path="res://assets/Cards/cardBack_blue4.png" id="2_2ahrb"]
 [ext_resource type="Texture2D" uid="uid://b0xtkuaw5i8cd" path="res://assets/Cards/cardClubs2.png" id="3_72pft"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_5qwqr"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ag51b"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8ncy3")
+"texture": ExtResource("2_2ahrb")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_72pft")
@@ -18,16 +18,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cihkp"]
+size = Vector2(138, 190)
+
 [node name="Card" type="Node2D"]
 script = ExtResource("1_ic4m4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(218, 324)
-sprite_frames = SubResource("SpriteFrames_5qwqr")
+position = Vector2(276, 236)
+sprite_frames = SubResource("SpriteFrames_ag51b")
 animation = &"clubs2"
 
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
-autostart = true
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(280, 231)
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5, 4)
+shape = SubResource("RectangleShape2D_cihkp")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
