@@ -1,11 +1,73 @@
-[gd_scene load_steps=6 format=3 uid="uid://jytrr8slxh71"]
+[gd_scene load_steps=57 format=3 uid="uid://jytrr8slxh71"]
 
 [ext_resource type="Script" path="res://scenes/game/Card.gd" id="1_ic4m4"]
 [ext_resource type="Texture2D" uid="uid://bk1xrp3empvqg" path="res://assets/Cards/cardBack_blue4.png" id="2_2ahrb"]
 [ext_resource type="Texture2D" uid="uid://b0xtkuaw5i8cd" path="res://assets/Cards/cardClubs2.png" id="3_72pft"]
+[ext_resource type="Texture2D" uid="uid://cn007kmhroni0" path="res://assets/Cards/cardClubs10.png" id="3_mgc21"]
+[ext_resource type="Texture2D" uid="uid://67rtvlcta3nw" path="res://assets/Cards/cardClubs3.png" id="5_g8s8j"]
+[ext_resource type="Texture2D" uid="uid://giwc6nnr2bqx" path="res://assets/Cards/cardClubs4.png" id="6_4t6hw"]
+[ext_resource type="Texture2D" uid="uid://ceq1uwrt5365a" path="res://assets/Cards/cardClubs5.png" id="7_i8wb2"]
+[ext_resource type="Texture2D" uid="uid://drg3oe20bh7b0" path="res://assets/Cards/cardClubs6.png" id="8_ac16d"]
+[ext_resource type="Texture2D" uid="uid://brjyuupafmym6" path="res://assets/Cards/cardClubs7.png" id="9_vt7nx"]
+[ext_resource type="Texture2D" uid="uid://dy2oqswferl2s" path="res://assets/Cards/cardClubs8.png" id="10_cprw6"]
+[ext_resource type="Texture2D" uid="uid://djbankktjb0lh" path="res://assets/Cards/cardClubs9.png" id="11_fp7vm"]
+[ext_resource type="Texture2D" uid="uid://kmc6wg56x868" path="res://assets/Cards/cardClubsA.png" id="12_wtx2d"]
+[ext_resource type="Texture2D" uid="uid://dk2seci0k255" path="res://assets/Cards/cardClubsJ.png" id="13_bu0qu"]
+[ext_resource type="Texture2D" uid="uid://dl6eebxwpb6sj" path="res://assets/Cards/cardClubsK.png" id="14_fhhxj"]
+[ext_resource type="Texture2D" uid="uid://bmx4lohsdtwmp" path="res://assets/Cards/cardClubsQ.png" id="15_grunp"]
+[ext_resource type="Texture2D" uid="uid://h4a8veyel2sn" path="res://assets/Cards/cardDiamonds10.png" id="16_ucbuw"]
+[ext_resource type="Texture2D" uid="uid://bbkc766qc1qwp" path="res://assets/Cards/cardDiamonds2.png" id="17_v103b"]
+[ext_resource type="Texture2D" uid="uid://dc7qdxfg8cm3u" path="res://assets/Cards/cardDiamonds3.png" id="18_kk11t"]
+[ext_resource type="Texture2D" uid="uid://biantniv02rly" path="res://assets/Cards/cardDiamonds4.png" id="19_06tlc"]
+[ext_resource type="Texture2D" uid="uid://dtdr77ox2sko5" path="res://assets/Cards/cardDiamonds5.png" id="20_mkvs5"]
+[ext_resource type="Texture2D" uid="uid://ddtg8r4ukek78" path="res://assets/Cards/cardDiamonds6.png" id="21_uw1f2"]
+[ext_resource type="Texture2D" uid="uid://cmmjugahmndv" path="res://assets/Cards/cardDiamonds7.png" id="22_1chxq"]
+[ext_resource type="Texture2D" uid="uid://b0h5s65fdepgn" path="res://assets/Cards/cardDiamonds8.png" id="23_bu26u"]
+[ext_resource type="Texture2D" uid="uid://g1r66hypa85l" path="res://assets/Cards/cardDiamonds9.png" id="24_p0yeb"]
+[ext_resource type="Texture2D" uid="uid://bcsta35clef07" path="res://assets/Cards/cardDiamondsA.png" id="25_kn8sd"]
+[ext_resource type="Texture2D" uid="uid://bd6tsmupd1d3i" path="res://assets/Cards/cardDiamondsJ.png" id="26_rkhxd"]
+[ext_resource type="Texture2D" uid="uid://txglr5p4eq7t" path="res://assets/Cards/cardDiamondsK.png" id="27_p3ok8"]
+[ext_resource type="Texture2D" uid="uid://0ticfqrbsrkr" path="res://assets/Cards/cardDiamondsQ.png" id="28_err4n"]
+[ext_resource type="Texture2D" uid="uid://cy2v4fjdejso0" path="res://assets/Cards/cardHearts10.png" id="29_g240k"]
+[ext_resource type="Texture2D" uid="uid://dh4alsioe5t74" path="res://assets/Cards/cardHearts2.png" id="30_2b6o4"]
+[ext_resource type="Texture2D" uid="uid://bl15uiqe5snrr" path="res://assets/Cards/cardHearts3.png" id="31_cxpq8"]
+[ext_resource type="Texture2D" uid="uid://homm58iir4ov" path="res://assets/Cards/cardHearts4.png" id="32_ybgta"]
+[ext_resource type="Texture2D" uid="uid://dtlu341d25xxs" path="res://assets/Cards/cardHearts5.png" id="33_8m8f0"]
+[ext_resource type="Texture2D" uid="uid://bv4hovjn4ylx3" path="res://assets/Cards/cardHearts6.png" id="34_ae8vr"]
+[ext_resource type="Texture2D" uid="uid://bx1xe51nsuvqq" path="res://assets/Cards/cardHearts7.png" id="35_p1sym"]
+[ext_resource type="Texture2D" uid="uid://dm7xuytu4c55i" path="res://assets/Cards/cardHearts8.png" id="36_ao4sp"]
+[ext_resource type="Texture2D" uid="uid://grw8fwc4nfk4" path="res://assets/Cards/cardHearts9.png" id="37_xetow"]
+[ext_resource type="Texture2D" uid="uid://dypguyp3f7toc" path="res://assets/Cards/cardHeartsA.png" id="38_t7q3u"]
+[ext_resource type="Texture2D" uid="uid://cehc8425wuudt" path="res://assets/Cards/cardHeartsJ.png" id="39_gn24d"]
+[ext_resource type="Texture2D" uid="uid://nlff0mwxvavm" path="res://assets/Cards/cardHeartsK.png" id="40_lnpjc"]
+[ext_resource type="Texture2D" uid="uid://c0ksr4h5gn8nj" path="res://assets/Cards/cardHeartsQ.png" id="41_piwyd"]
+[ext_resource type="Texture2D" uid="uid://bof7e0u4ye70x" path="res://assets/Cards/cardSpades10.png" id="42_eli8p"]
+[ext_resource type="Texture2D" uid="uid://bdkyeghegmhdb" path="res://assets/Cards/cardSpades2.png" id="43_nggfe"]
+[ext_resource type="Texture2D" uid="uid://dwv6igxmrmpml" path="res://assets/Cards/cardSpades3.png" id="44_ihuxf"]
+[ext_resource type="Texture2D" uid="uid://d24dkhqoh0c3h" path="res://assets/Cards/cardSpades4.png" id="45_pr3jw"]
+[ext_resource type="Texture2D" uid="uid://narxtilonbco" path="res://assets/Cards/cardSpades5.png" id="46_vifts"]
+[ext_resource type="Texture2D" uid="uid://hhikoadcqwwg" path="res://assets/Cards/cardSpades6.png" id="47_8rkys"]
+[ext_resource type="Texture2D" uid="uid://dn4kn8ivv3jpe" path="res://assets/Cards/cardSpades7.png" id="48_2kiop"]
+[ext_resource type="Texture2D" uid="uid://c6srhys2art3v" path="res://assets/Cards/cardSpades8.png" id="49_j2j05"]
+[ext_resource type="Texture2D" uid="uid://cgasjn5n2ap6x" path="res://assets/Cards/cardSpades9.png" id="50_0mltr"]
+[ext_resource type="Texture2D" uid="uid://cnklj68jgorp3" path="res://assets/Cards/cardSpadesA.png" id="51_3y5bb"]
+[ext_resource type="Texture2D" uid="uid://irxef0sji8a8" path="res://assets/Cards/cardSpadesJ.png" id="52_aigbr"]
+[ext_resource type="Texture2D" uid="uid://b1ly05dcwhcfc" path="res://assets/Cards/cardSpadesK.png" id="53_ueao4"]
+[ext_resource type="Texture2D" uid="uid://c3jymv0ypqeny" path="res://assets/Cards/cardSpadesQ.png" id="54_fi13t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ag51b"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mgc21")
+}],
+"loop": false,
+"name": &"clubs10",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_2ahrb")
@@ -15,6 +77,556 @@ animations = [{
 }],
 "loop": false,
 "name": &"clubs2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g8s8j")
+}],
+"loop": false,
+"name": &"clubs3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4t6hw")
+}],
+"loop": true,
+"name": &"clubs4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i8wb2")
+}],
+"loop": false,
+"name": &"clubs5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ac16d")
+}],
+"loop": false,
+"name": &"clubs6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vt7nx")
+}],
+"loop": false,
+"name": &"clubs7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cprw6")
+}],
+"loop": true,
+"name": &"clubs8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fp7vm")
+}],
+"loop": false,
+"name": &"clubs9",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wtx2d")
+}],
+"loop": false,
+"name": &"clubsAce",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bu0qu")
+}],
+"loop": false,
+"name": &"clubsJack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fhhxj")
+}],
+"loop": false,
+"name": &"clubsKing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_grunp")
+}],
+"loop": false,
+"name": &"clubsQueen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ucbuw")
+}],
+"loop": false,
+"name": &"diamond10",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_v103b")
+}],
+"loop": false,
+"name": &"diamond2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_kk11t")
+}],
+"loop": false,
+"name": &"diamond3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_06tlc")
+}],
+"loop": false,
+"name": &"diamond4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_mkvs5")
+}],
+"loop": false,
+"name": &"diamond5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_uw1f2")
+}],
+"loop": false,
+"name": &"diamond6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_1chxq")
+}],
+"loop": false,
+"name": &"diamond7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_bu26u")
+}],
+"loop": false,
+"name": &"diamond8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_p0yeb")
+}],
+"loop": false,
+"name": &"diamond9",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_kn8sd")
+}],
+"loop": false,
+"name": &"diamondAce",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rkhxd")
+}],
+"loop": false,
+"name": &"diamondJack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_p3ok8")
+}],
+"loop": false,
+"name": &"diamondKing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_err4n")
+}],
+"loop": false,
+"name": &"diamondQueen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_g240k")
+}],
+"loop": true,
+"name": &"hearts10",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_2b6o4")
+}],
+"loop": false,
+"name": &"hearts2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_cxpq8")
+}],
+"loop": false,
+"name": &"hearts3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ybgta")
+}],
+"loop": false,
+"name": &"hearts4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_8m8f0")
+}],
+"loop": false,
+"name": &"hearts5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ae8vr")
+}],
+"loop": false,
+"name": &"hearts6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_p1sym")
+}],
+"loop": false,
+"name": &"hearts7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ao4sp")
+}],
+"loop": false,
+"name": &"hearts8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_xetow")
+}],
+"loop": false,
+"name": &"hearts9",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_t7q3u")
+}],
+"loop": false,
+"name": &"heartsAce",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_gn24d")
+}],
+"loop": false,
+"name": &"heartsJack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_lnpjc")
+}],
+"loop": false,
+"name": &"heartsKing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_piwyd")
+}],
+"loop": false,
+"name": &"heartsQueen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_eli8p")
+}],
+"loop": false,
+"name": &"spades10",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_nggfe")
+}],
+"loop": false,
+"name": &"spades2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_ihuxf")
+}],
+"loop": false,
+"name": &"spades3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_pr3jw")
+}],
+"loop": false,
+"name": &"spades4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_vifts")
+}],
+"loop": false,
+"name": &"spades5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_8rkys")
+}],
+"loop": false,
+"name": &"spades6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_2kiop")
+}],
+"loop": false,
+"name": &"spades7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_j2j05")
+}],
+"loop": false,
+"name": &"spades8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_0mltr")
+}],
+"loop": false,
+"name": &"spades9",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_3y5bb")
+}],
+"loop": false,
+"name": &"spadesAce",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_aigbr")
+}],
+"loop": false,
+"name": &"spadesJack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_ueao4")
+}],
+"loop": false,
+"name": &"spadesKing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ahrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_fi13t")
+}],
+"loop": false,
+"name": &"spadesQueen",
 "speed": 5.0
 }]
 
@@ -27,7 +639,7 @@ script = ExtResource("1_ic4m4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(276, 236)
 sprite_frames = SubResource("SpriteFrames_ag51b")
-animation = &"clubs2"
+animation = &"spadesQueen"
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(280, 231)
