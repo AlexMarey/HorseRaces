@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjha5vsf4053e"]
 
-[ext_resource type="Script" path="res://DeckOfCards.gd" id="1_6psb0"]
+[ext_resource type="Script" path="res://scenes/game/DeckOfCards.gd" id="1_6psb0"]
 [ext_resource type="Texture2D" uid="uid://bk1xrp3empvqg" path="res://assets/Cards/cardBack_blue4.png" id="2_q4aee"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lotp"]
@@ -8,15 +8,14 @@ size = Vector2(139.5, 188.75)
 
 [node name="DeckOfCards" type="Node2D"]
 script = ExtResource("1_6psb0")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(332, 313)
 texture = ExtResource("2_q4aee")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(332, 313)
 shape = SubResource("RectangleShape2D_5lotp")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

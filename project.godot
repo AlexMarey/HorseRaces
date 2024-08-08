@@ -14,6 +14,10 @@ config/name="Horse Races"
 run/main_scene="res://scenes/game/card.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
+[autoload]
+
+DeckValues="*res://scripts/DeckValues.gd"
+
 [dotnet]
 
 project/assembly_name="Horse Races"
