@@ -48,8 +48,8 @@ func create_cards():
 		var suit = DeckValues.suitLookup.get(deck[index][0])
 		card.suit = suit
 		card.animationName = suit + DeckValues.valueLookup.get(deck[index][1])
-		card.position.x = 100
-		card.position.y = 100
+		card.position.x = -500
+		card.position.y = -500
 		card.suitIndex = deck[index][0]
 		card.valueIndex = deck[index][1]
 		add_child(card)
@@ -58,5 +58,6 @@ func create_cards():
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if(event.is_action_pressed("mouse_left_click") && deck.size() > 0):
-		deck_clicked.emit(DeckValues.suitLookup.get(deck[0][0]), DeckValues.suitLookup.get(deck[0][0]))
+		print("Emitting at " + str(deck[0][0])+ ","+str(deck[0][1]))
+		deck_clicked.emit(deck[0][0],deck[0][1])
 		deck.pop_front()

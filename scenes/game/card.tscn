@@ -97,7 +97,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_4t6hw")
 }],
-"loop": true,
+"loop": false,
 "name": &"clubs4",
 "speed": 5.0
 }, {
@@ -141,7 +141,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_cprw6")
 }],
-"loop": true,
+"loop": false,
 "name": &"clubs8",
 "speed": 5.0
 }, {
@@ -350,7 +350,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("29_g240k")
 }],
-"loop": true,
+"loop": false,
 "name": &"hearts10",
 "speed": 5.0
 }, {

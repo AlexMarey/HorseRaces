@@ -10,7 +10,7 @@ var cardValues: Array = ['2','3','4','5','6','7','8','9','10','Jack','Queen','Ki
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var deck = get_node("./scenes/game/DeckOfCards")
+	var deck = get_parent()
 	deck.connect("deck_clicked", flip_card)
 	pass # Replace with function body.
 
@@ -18,12 +18,8 @@ func _ready():
 func _process(delta):
 	pass
 
-func flip_card(suit: String, value: String):
-	#position.x += position.x + 250
-	#var suitIndex = randi_range(0,3)
-	#var cardIndex = randi_range(0,12)
-	#var animationName = suits[suitIndex]+cardValues[cardIndex]
-	#print(animationName)
-	if(suitIndex == suit and valueIndex == value):
+func flip_card(suitReceived: int, valueReceived: int):
+	if(suitIndex == suitReceived and valueIndex == valueReceived):
+		print("Card found, playing: "+ animationName)
+		global_position = Vector2(650, 500)
 		$AnimatedSprite2D.play(animationName)
-
