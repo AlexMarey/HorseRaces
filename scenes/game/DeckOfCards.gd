@@ -1,6 +1,6 @@
 extends Node2D
 
-signal deck_clicked(suit: String, value: String)
+signal deck_clicked(suit: int, value: int)
 
 var deck: Array = []
 var Card = load("res://scenes/game/card.tscn")

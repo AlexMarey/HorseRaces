@@ -1,14 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://714e8w4rf8od"]
+[gd_scene load_steps=5 format=3 uid="uid://714e8w4rf8od"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_0my83"]
 [ext_resource type="PackedScene" uid="uid://bjha5vsf4053e" path="res://scenes/game/deck_of_cards.tscn" id="3_34by7"]
 [ext_resource type="PackedScene" uid="uid://cg1cp2v76angy" path="res://scenes/game/horse.tscn" id="3_rrqf0"]
+[ext_resource type="PackedScene" uid="uid://cwkodsil2w88s" path="res://scenes/game/finish_line.tscn" id="4_nty8q"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0my83")
 
-[node name="Horse" parent="." instance=ExtResource("3_rrqf0")]
-position = Vector2(168, 132)
-
 [node name="DeckOfCards" parent="." instance=ExtResource("3_34by7")]
-position = Vector2(270, 506)
+position = Vector2(358, 522)
+
+[node name="FinishLine" parent="." instance=ExtResource("4_nty8q")]
+position = Vector2(1047, 61)
+
+[node name="HorseHearts" parent="." instance=ExtResource("3_rrqf0")]
+position = Vector2(140, 295)
+suitedTeam = "hearts"
+
+[node name="HorseClubs" parent="." instance=ExtResource("3_rrqf0")]
+position = Vector2(134, 197)
+suitedTeam = "clubs"
+
+[node name="HorseDiamonds" parent="." instance=ExtResource("3_rrqf0")]
+position = Vector2(136, 100)
+suitedTeam = "diamond"
+
+[node name="HorseSpades" parent="." instance=ExtResource("3_rrqf0")]
+position = Vector2(137, -3)
+suitedTeam = "spades"
+
+[connection signal="deck_clicked" from="DeckOfCards" to="HorseHearts" method="_on_deck_of_cards_deck_clicked"]
+[connection signal="deck_clicked" from="DeckOfCards" to="HorseClubs" method="_on_deck_of_cards_deck_clicked"]
+[connection signal="deck_clicked" from="DeckOfCards" to="HorseDiamonds" method="_on_deck_of_cards_deck_clicked"]
+[connection signal="deck_clicked" from="DeckOfCards" to="HorseSpades" method="_on_deck_of_cards_deck_clicked"]
