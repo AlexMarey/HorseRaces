@@ -18,6 +18,11 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 
 DeckValues="*res://scripts/DeckValues.gd"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [dotnet]
 
 project/assembly_name="Horse Races"

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://714e8w4rf8od"]
+[gd_scene load_steps=6 format=3 uid="uid://714e8w4rf8od"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_0my83"]
 [ext_resource type="PackedScene" uid="uid://bjha5vsf4053e" path="res://scenes/game/deck_of_cards.tscn" id="3_34by7"]
 [ext_resource type="PackedScene" uid="uid://cg1cp2v76angy" path="res://scenes/game/horse.tscn" id="3_rrqf0"]
 [ext_resource type="PackedScene" uid="uid://cwkodsil2w88s" path="res://scenes/game/finish_line.tscn" id="4_nty8q"]
+[ext_resource type="Script" path="res://scenes/Label.gd" id="5_5m2k4"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0my83")
@@ -30,7 +31,18 @@ suitedTeam = "diamond"
 position = Vector2(137, -3)
 suitedTeam = "spades"
 
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+offset_left = 452.0
+offset_top = 191.0
+offset_right = 807.0
+offset_bottom = 279.0
+theme_override_font_sizes/font_size = 64
+script = ExtResource("5_5m2k4")
+
 [connection signal="deck_clicked" from="DeckOfCards" to="HorseHearts" method="_on_deck_of_cards_deck_clicked"]
 [connection signal="deck_clicked" from="DeckOfCards" to="HorseClubs" method="_on_deck_of_cards_deck_clicked"]
 [connection signal="deck_clicked" from="DeckOfCards" to="HorseDiamonds" method="_on_deck_of_cards_deck_clicked"]
 [connection signal="deck_clicked" from="DeckOfCards" to="HorseSpades" method="_on_deck_of_cards_deck_clicked"]
+[connection signal="race_finished" from="FinishLine" to="Label" method="_on_finish_line_race_finished"]

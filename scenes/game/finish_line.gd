@@ -1,5 +1,6 @@
 extends Area2D
 
+signal race_finished(raceWinner: String)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,7 +12,7 @@ func _process(delta):
 	pass
 
 
-func _on_area_entered(area):
-	print("thing entered")
+func _on_area_entered(area: Area2D):
 	if (area.is_in_group("Horses")):
-		print("horse has entered area")
+		var horse = area.get_parent()
+		race_finished.emit(horse.suitedTeam)
