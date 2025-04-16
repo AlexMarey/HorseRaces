@@ -634,6 +634,7 @@ animations = [{
 size = Vector2(138, 190)
 
 [node name="Card" type="Node2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_ic4m4")
 metadata/_edit_group_ = true
 

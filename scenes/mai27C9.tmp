@@ -42,9 +42,12 @@ theme_override_font_sizes/font_size = 64
 script = ExtResource("5_5m2k4")
 
 [node name="InvisibleTrackers" type="Node2D" parent="."]
-position = Vector2(200, 200)
 
 [node name="RacingColumn" parent="InvisibleTrackers" instance=ExtResource("6_44b26")]
+position = Vector2(200, 200)
+
+[node name="RacingColumn2" parent="InvisibleTrackers" instance=ExtResource("6_44b26")]
+position = Vector2(250, 200)
 
 [connection signal="deck_clicked" from="DeckOfCards" to="HorseHearts" method="_on_deck_of_cards_deck_clicked"]
 [connection signal="deck_clicked" from="DeckOfCards" to="HorseClubs" method="_on_deck_of_cards_deck_clicked"]

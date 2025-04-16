@@ -3,13 +3,12 @@ extends Node2D
 signal deck_clicked(suit: int, value: int)
 
 var deck: Array = []
-var Card = load("res://scenes/game/card.tscn")
+var Card = preload("res://scenes/game/card.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setup_deck()
 	create_cards()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -45,16 +44,31 @@ func add_card_to_deck(unusedSuit:Array, suit: String):
 func create_cards():
 	for index in range(0, deck.size() - 1):
 		var card = Card.instantiate()
+		add_child(card)
 		var suit = DeckValues.suitLookup.get(deck[index][0])
 		card.suit = suit
 		card.animationName = suit + DeckValues.valueLookup.get(deck[index][1])
-		card.position.x = -500
-		card.position.y = -500
 		card.suitIndex = deck[index][0]
 		card.valueIndex = deck[index][1]
-		add_child(card)
+		
+		# Create penalty cards
+		if index <= 8: 
+			var positionX = (index * 100) + 200
+			var positionY = 500
+			card.set_global_position(Vector2(positionX, positionY))
+			card.isPenaltyCard = true
+			card.penaltyCardIndex = index
+			card.playPositionX = positionX
+			card.playPositionY = positionY
+		# Create normal deck
+		else:
+			card.position.x = -500
+			card.position.y = -500
+			card.playPositionX = self.position.x + 100
+			card.playPositionY = self.position.y
 		print("Card Created")
-
+	for index in 9:
+		deck.pop_front()
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if(event.is_action_pressed("mouse_left_click") && deck.size() > 0):
