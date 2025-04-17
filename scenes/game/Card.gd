@@ -9,8 +9,6 @@ var cardValues: Array = ['2','3','4','5','6','7','8','9','10','Jack','Queen','Ki
 @export var valueIndex = -1
 @export var playPositionX = 650
 @export var playPositionY = 500
-@export var isPenaltyCard = false
-@export var penaltyCardIndex = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,7 +23,6 @@ func _process(delta):
 func flip_card(suitReceived: int, valueReceived: int):
 	if(suitIndex == suitReceived and valueIndex == valueReceived):
 		print("Card found, playing: "+ animationName)
-		print(str(isPenaltyCard))
 		global_position = Vector2(self.playPositionX, self.playPositionY)
 		$AnimatedSprite2D.play(animationName)
 

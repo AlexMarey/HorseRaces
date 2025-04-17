@@ -1,8 +1,10 @@
 extends Node2D
 
 signal deck_clicked(suit: int, value: int)
+signal penalty_card_flipped(suit: int, value: int)
 
-var deck: Array = []
+var deck: Array = [] # Array of tuples [x, y] where x is suit and y is card value index
+var penaltyDeck: Array = [] # Array of tuples [x, y] where x is suit and y is card value index
 var Card = preload("res://scenes/game/card.tscn")
 
 # Called when the node enters the scene tree for the first time.
@@ -56,10 +58,9 @@ func create_cards():
 			var positionX = (index * 100) + 200
 			var positionY = 500
 			card.set_global_position(Vector2(positionX, positionY))
-			card.isPenaltyCard = true
-			card.penaltyCardIndex = index
 			card.playPositionX = positionX
 			card.playPositionY = positionY
+			penaltyDeck.append([deck[index][0], deck[index][1]])
 		# Create normal deck
 		else:
 			card.position.x = -500
@@ -67,6 +68,7 @@ func create_cards():
 			card.playPositionX = self.position.x + 100
 			card.playPositionY = self.position.y
 		print("Card Created")
+	
 	for index in 9:
 		deck.pop_front()
 
@@ -75,3 +77,9 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		print("Emitting at " + str(deck[0][0])+ ","+str(deck[0][1]))
 		deck_clicked.emit(deck[0][0],deck[0][1])
 		deck.pop_front()
+
+
+func _on_racing_column_tracker_reached_max_horses():
+	# penalty_card_flipped.emit(penaltyDeck[0][0], penaltyDeck[0][1])
+	deck_clicked.emit(penaltyDeck[0][0], penaltyDeck[0][1])
+	penaltyDeck.pop_front()

@@ -46,8 +46,45 @@ position = Vector2(200, 200)
 
 [node name="RacingColumn" parent="InvisibleTrackers" instance=ExtResource("6_44b26")]
 
+[node name="RacingColumn2" parent="InvisibleTrackers" instance=ExtResource("6_44b26")]
+position = Vector2(100, 0)
+
+[node name="RacingColumn3" parent="InvisibleTrackers" instance=ExtResource("6_44b26")]
+position = Vector2(200, 0)
+
+[node name="RacingColumn4" parent="InvisibleTrackers" instance=ExtResource("6_44b26")]
+position = Vector2(300, 0)
+
+[node name="RacingColumn5" parent="InvisibleTrackers" instance=ExtResource("6_44b26")]
+position = Vector2(400, 0)
+
+[node name="RacingColumn6" parent="InvisibleTrackers" instance=ExtResource("6_44b26")]
+position = Vector2(500, 0)
+
+[node name="RacingColumn7" parent="InvisibleTrackers" instance=ExtResource("6_44b26")]
+position = Vector2(600, 0)
+
+[node name="RacingColumn8" parent="InvisibleTrackers" instance=ExtResource("6_44b26")]
+position = Vector2(700, 0)
+
+[node name="RacingColumn9" parent="InvisibleTrackers" instance=ExtResource("6_44b26")]
+position = Vector2(800, 0)
+
 [connection signal="deck_clicked" from="DeckOfCards" to="HorseHearts" method="_on_deck_of_cards_deck_clicked"]
 [connection signal="deck_clicked" from="DeckOfCards" to="HorseClubs" method="_on_deck_of_cards_deck_clicked"]
 [connection signal="deck_clicked" from="DeckOfCards" to="HorseDiamonds" method="_on_deck_of_cards_deck_clicked"]
 [connection signal="deck_clicked" from="DeckOfCards" to="HorseSpades" method="_on_deck_of_cards_deck_clicked"]
+[connection signal="penalty_card_flipped" from="DeckOfCards" to="HorseHearts" method="_on_deck_of_cards_penalty_card_flipped"]
+[connection signal="penalty_card_flipped" from="DeckOfCards" to="HorseClubs" method="_on_deck_of_cards_penalty_card_flipped"]
+[connection signal="penalty_card_flipped" from="DeckOfCards" to="HorseDiamonds" method="_on_deck_of_cards_penalty_card_flipped"]
+[connection signal="penalty_card_flipped" from="DeckOfCards" to="HorseSpades" method="_on_deck_of_cards_penalty_card_flipped"]
 [connection signal="race_finished" from="FinishLine" to="Label" method="_on_finish_line_race_finished"]
+[connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
+[connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn2" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
+[connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn3" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
+[connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn4" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
+[connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn5" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
+[connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn6" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
+[connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn7" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
+[connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn8" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
+[connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn9" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
