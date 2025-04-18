@@ -13,14 +13,14 @@ func _process(delta):
 	pass
 
 func _on_deck_of_cards_deck_clicked(suit: int, value: int):
-	print('HORSE - Normal Signal Received. Suit: ' + str(suit) + ', Team ' + suitedTeam)
+	print('HORSE - Deck Clicked Signal Received. Suit: ' + str(suit) + ', Team ' + suitedTeam)
 	if(DeckValues.suitLookup.get(suit) == suitedTeam):
-		print("Moving: " + DeckValues.suitLookup.get(suit))
+		print("HORSE - Moving Forward: " + DeckValues.suitLookup.get(suit))
 		position.x += 100
 
 
 func _on_deck_of_cards_penalty_card_flipped(suit, value):
 	print('HORSE - Penalty Signal Received. Suit: ' + str(suit) + ', Team ' + suitedTeam)
 	if(DeckValues.suitLookup.get(suit) == suitedTeam):
-		print("Moving Back: " + DeckValues.suitLookup.get(suit))
+		print("HORSE - Moving Back: " + DeckValues.suitLookup.get(suit))
 		position.x -= 100

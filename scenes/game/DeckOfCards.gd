@@ -67,19 +67,19 @@ func create_cards():
 			card.position.y = -500
 			card.playPositionX = self.position.x + 100
 			card.playPositionY = self.position.y
-		print("Card Created")
+		print("DECK - Card Created")
 	
 	for index in 9:
 		deck.pop_front()
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if(event.is_action_pressed("mouse_left_click") && deck.size() > 0):
-		print("Emitting at " + str(deck[0][0])+ ","+str(deck[0][1]))
+		print("DECK - Emitting deck clicked " + str(deck[0][0])+ ","+str(deck[0][1]))
 		deck_clicked.emit(deck[0][0],deck[0][1])
 		deck.pop_front()
 
 
 func _on_racing_column_tracker_reached_max_horses():
-	# penalty_card_flipped.emit(penaltyDeck[0][0], penaltyDeck[0][1])
-	deck_clicked.emit(penaltyDeck[0][0], penaltyDeck[0][1])
+	penalty_card_flipped.emit(penaltyDeck[0][0], penaltyDeck[0][1])
+	#deck_clicked.emit(penaltyDeck[0][0], penaltyDeck[0][1])
 	penaltyDeck.pop_front()

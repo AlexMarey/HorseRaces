@@ -2,8 +2,8 @@ extends Node2D
 
 signal tracker_reached_max_horses()
 
-@export var uniqueHorsesTracked: int = 0
 var trackedHorses: Array = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -20,4 +20,4 @@ func _on_area_2d_area_entered(area):
 		trackedHorses.append(parent.suitedTeam)
 		if trackedHorses.size() == 4:
 			tracker_reached_max_horses.emit()
-			print("All Horses tracked")
+			print("RACING COLUMN - All Horses tracked. Emit 'max horses reached'")
