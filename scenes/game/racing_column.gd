@@ -2,7 +2,7 @@ extends Node2D
 
 signal tracker_reached_max_horses()
 
-var trackedHorses: Array = []
+var trackedHorses: Array[String] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

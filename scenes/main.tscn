@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://714e8w4rf8od"]
+[gd_scene load_steps=8 format=3 uid="uid://714e8w4rf8od"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_0my83"]
 [ext_resource type="PackedScene" uid="uid://bjha5vsf4053e" path="res://scenes/game/deck_of_cards.tscn" id="3_34by7"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cwkodsil2w88s" path="res://scenes/game/finish_line.tscn" id="4_nty8q"]
 [ext_resource type="Script" path="res://scenes/Label.gd" id="5_5m2k4"]
 [ext_resource type="PackedScene" uid="uid://ielieykwhr17" path="res://scenes/game/racing_column.tscn" id="6_44b26"]
+[ext_resource type="Script" path="res://scenes/game/GameOver.gd" id="6_bxu6s"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0my83")
@@ -31,15 +32,6 @@ suitedTeam = "diamond"
 [node name="HorseSpades" parent="." instance=ExtResource("3_rrqf0")]
 position = Vector2(100, 0)
 suitedTeam = "spades"
-
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = 452.0
-offset_top = 191.0
-offset_right = 807.0
-offset_bottom = 279.0
-theme_override_font_sizes/font_size = 64
-script = ExtResource("5_5m2k4")
 
 [node name="InvisibleTrackers" type="Node2D" parent="."]
 position = Vector2(200, 200)
@@ -70,6 +62,32 @@ position = Vector2(700, 0)
 [node name="RacingColumn9" parent="InvisibleTrackers" instance=ExtResource("6_44b26")]
 position = Vector2(800, 0)
 
+[node name="GameOver" type="CanvasLayer" parent="."]
+process_mode = 2
+script = ExtResource("6_bxu6s")
+
+[node name="Panel" type="Panel" parent="GameOver"]
+modulate = Color(0.227873, 0.450218, 0.211009, 1)
+offset_left = 31.0
+offset_top = 15.0
+offset_right = 1270.0
+offset_bottom = 706.0
+
+[node name="WinnerLabel" type="Label" parent="GameOver"]
+offset_left = 452.0
+offset_top = 191.0
+offset_right = 807.0
+offset_bottom = 279.0
+theme_override_font_sizes/font_size = 64
+script = ExtResource("5_5m2k4")
+
+[node name="Restart" type="Button" parent="GameOver"]
+offset_left = 501.0
+offset_top = 454.0
+offset_right = 703.0
+offset_bottom = 539.0
+text = "Restart"
+
 [connection signal="deck_clicked" from="DeckOfCards" to="HorseHearts" method="_on_deck_of_cards_deck_clicked"]
 [connection signal="deck_clicked" from="DeckOfCards" to="HorseClubs" method="_on_deck_of_cards_deck_clicked"]
 [connection signal="deck_clicked" from="DeckOfCards" to="HorseDiamonds" method="_on_deck_of_cards_deck_clicked"]
@@ -78,7 +96,8 @@ position = Vector2(800, 0)
 [connection signal="penalty_card_flipped" from="DeckOfCards" to="HorseClubs" method="_on_deck_of_cards_penalty_card_flipped"]
 [connection signal="penalty_card_flipped" from="DeckOfCards" to="HorseDiamonds" method="_on_deck_of_cards_penalty_card_flipped"]
 [connection signal="penalty_card_flipped" from="DeckOfCards" to="HorseSpades" method="_on_deck_of_cards_penalty_card_flipped"]
-[connection signal="race_finished" from="FinishLine" to="Label" method="_on_finish_line_race_finished"]
+[connection signal="race_finished" from="FinishLine" to="GameOver" method="_on_finish_line_race_finished"]
+[connection signal="race_finished" from="FinishLine" to="GameOver/WinnerLabel" method="_on_finish_line_race_finished"]
 [connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
 [connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn2" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
 [connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn3" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
@@ -88,3 +107,4 @@ position = Vector2(800, 0)
 [connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn7" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
 [connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn8" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
 [connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn9" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
+[connection signal="pressed" from="GameOver/Restart" to="GameOver" method="_on_restart_pressed"]

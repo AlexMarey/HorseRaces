@@ -1,7 +1,7 @@
 extends Node2D
 
-var suits: Array = ['clubs', 'diamond','hearts','spades']
-var cardValues: Array = ['2','3','4','5','6','7','8','9','10','Jack','Queen','King','Ace']
+var suits: Array[String] = ['clubs', 'diamond','hearts','spades']
+var cardValues: Array[String] = ['2','3','4','5','6','7','8','9','10','Jack','Queen','King','Ace']
 
 @export var suit = ""
 @export var animationName = ""
