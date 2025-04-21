@@ -15,4 +15,4 @@ func _process(delta):
 func _on_area_entered(area: Area2D):
 	if (area.is_in_group("Horses")):
 		var horse = area.get_parent()
-		race_finished.emit(horse.suitedTeam)
+		race_finished.emit(horse.horseName)
