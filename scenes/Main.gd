@@ -2,7 +2,8 @@ extends Node
 
 # To Do: 
 # Name Hoses - Start screen (UI), names appear above heads
-# Polish Game
+# TODO: Capture signal from start screen to update label for horse name
+# Polish Game - Better animations, race track background, sounds, better ui look
 # Done
 # Extra Ideas
 # Automatic mode - no deck clicks just go

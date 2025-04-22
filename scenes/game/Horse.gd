@@ -12,7 +12,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if $Label.text != horseName:
+		$Label.text = horseName
 
 func _on_deck_of_cards_deck_clicked(suit: int, value: int):
 	print('HORSE - Deck Clicked Signal Received. Suit: ' + str(suit) + ', Team ' + suitedTeam)
