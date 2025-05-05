@@ -13,6 +13,10 @@ func _ready():
 func _process(delta):
 	pass
 
+func _draw():
+	draw_line(Vector2(-50,-200), Vector2(-50, 200),Color.PERU, 5.0)
+	pass
+
 func _on_area_2d_area_entered(area):
 	# if horse is unique, add it to trackHorses
 	var parent = area.get_parent();

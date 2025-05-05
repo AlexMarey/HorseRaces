@@ -15,6 +15,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+func _draw():
+	draw_rect(Rect2(-38.5, -51, 152, 102), Color.FOREST_GREEN, false, 2.0)
 
 func setup_deck():
 	var isDone = false
@@ -55,8 +58,8 @@ func create_cards():
 		
 		# Create penalty cards
 		if index <= 8: 
-			var positionX = (index * 100) + 200
-			var positionY = 500
+			var positionX = (index * 100) + 222.5
+			var positionY = self.position.y
 			card.set_global_position(Vector2(positionX, positionY))
 			card.playPositionX = positionX
 			card.playPositionY = positionY
@@ -65,7 +68,7 @@ func create_cards():
 		else:
 			card.position.x = -500
 			card.position.y = -500
-			card.playPositionX = self.position.x + 100
+			card.playPositionX = self.position.x + 75
 			card.playPositionY = self.position.y
 		print("DECK - Card Created")
 	
@@ -77,7 +80,6 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		print("DECK - Emitting deck clicked " + str(deck[0][0])+ ","+str(deck[0][1]))
 		deck_clicked.emit(deck[0][0],deck[0][1])
 		deck.pop_front()
-
 
 func _on_racing_column_tracker_reached_max_horses():
 	penalty_card_flipped.emit(penaltyDeck[0][0], penaltyDeck[0][1])

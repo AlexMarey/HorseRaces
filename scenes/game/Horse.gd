@@ -27,3 +27,7 @@ func _on_deck_of_cards_penalty_card_flipped(suit, value):
 	if(DeckValues.suitLookup.get(suit) == suitedTeam):
 		print("HORSE - Moving Back: " + DeckValues.suitLookup.get(suit))
 		position.x -= 100
+
+# Used by NameInput Node to give the horse a name
+func _on_new_name(newName: String):
+	horseName = newName

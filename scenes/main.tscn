@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://714e8w4rf8od"]
+[gd_scene load_steps=13 format=3 uid="uid://714e8w4rf8od"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_0my83"]
 [ext_resource type="PackedScene" uid="uid://bjha5vsf4053e" path="res://scenes/game/deck_of_cards.tscn" id="3_34by7"]
@@ -8,34 +8,363 @@
 [ext_resource type="Script" path="res://scenes/game/StartScreen.gd" id="6_6jxh7"]
 [ext_resource type="PackedScene" uid="uid://ielieykwhr17" path="res://scenes/game/racing_column.tscn" id="6_44b26"]
 [ext_resource type="Script" path="res://scenes/game/GameOver.gd" id="6_bxu6s"]
+[ext_resource type="PackedScene" uid="uid://b2nsndo1b8jr8" path="res://scenes/game/name_input.tscn" id="7_3lpme"]
+[ext_resource type="Texture2D" uid="uid://cshjmt7y4nj4n" path="res://assets/spritesheet_tiles.png" id="10_4qm77"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_htmrs"]
+resource_name = "Racetrack"
+texture = ExtResource("10_4qm77")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+16:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+16:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+14:14/0 = 0
+15:14/0 = 0
+16:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+12:15/0 = 0
+13:15/0 = 0
+14:15/0 = 0
+15:15/0 = 0
+16:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+3:16/0 = 0
+4:16/0 = 0
+5:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+12:16/0 = 0
+13:16/0 = 0
+14:16/0 = 0
+15:16/0 = 0
+16:16/0 = 0
+0:17/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+3:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+6:17/0 = 0
+7:17/0 = 0
+8:17/0 = 0
+9:17/0 = 0
+10:17/0 = 0
+11:17/0 = 0
+12:17/0 = 0
+13:17/0 = 0
+14:17/0 = 0
+15:17/0 = 0
+16:17/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8dyrm"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_htmrs")
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0my83")
 
+[node name="Background" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_8dyrm")
+format = 2
+layer_0/tile_data = PackedInt32Array(65536, 786432, 1, 131072, 786432, 1, 196608, 786432, 1, 0, 786432, 5, 262145, 720896, 11, 262146, 720896, 11, 262148, 720896, 11, 262149, 720896, 11, 262150, 720896, 11, 262152, 720896, 11, 262144, 786432, 0, 262147, 720896, 11, 196616, 786432, 9, 131080, 786432, 9, 65544, 786432, 9, 262151, 720896, 11, 1, 720896, 15, 2, 720896, 15, 3, 720896, 15, 4, 720896, 15, 5, 720896, 15, 6, 720896, 15, 7, 720896, 15, 8, 720896, 15, 9, 786432, 4, 262153, 720896, 17, 65545, 786432, 3, 131081, 786432, 3, 196617, 786432, 3, 65537, 0, 9, 65538, 0, 9, 65539, 0, 9, 65540, 0, 9, 65541, 0, 9, 65542, 0, 9, 65543, 0, 9, 131079, 0, 9, 131078, 0, 9, 131077, 0, 9, 131076, 0, 9, 131075, 0, 9, 131074, 0, 9, 131073, 0, 9, 196609, 0, 9, 196610, 0, 9, 196611, 0, 9, 196612, 0, 9, 196613, 0, 9, 196614, 0, 9, 196615, 0, 9, 327680, 786432, 2, 327681, 786432, 2, 327682, 786432, 2, 327683, 786432, 2, 327684, 786432, 2, 327685, 786432, 2, 327686, 786432, 2, 327687, 786432, 2, 327688, 786432, 2, 327689, 786432, 2)
+
 [node name="DeckOfCards" parent="." instance=ExtResource("3_34by7")]
-position = Vector2(131, 622)
-
-[node name="FinishLine" parent="." instance=ExtResource("4_nty8q")]
-position = Vector2(1100, 60)
-
-[node name="HorseHearts" parent="." instance=ExtResource("3_rrqf0")]
-position = Vector2(100, 300)
-suitedTeam = "hearts"
-
-[node name="HorseClubs" parent="." instance=ExtResource("3_rrqf0")]
-position = Vector2(100, 200)
-suitedTeam = "clubs"
-
-[node name="HorseDiamonds" parent="." instance=ExtResource("3_rrqf0")]
-position = Vector2(100, 100)
-suitedTeam = "diamond"
+position = Vector2(41, 638)
 
 [node name="HorseSpades" parent="." instance=ExtResource("3_rrqf0")]
-position = Vector2(100, 0)
+position = Vector2(122, 121)
 suitedTeam = "spades"
 
+[node name="HorseDiamonds" parent="." instance=ExtResource("3_rrqf0")]
+position = Vector2(122, 221)
+suitedTeam = "diamond"
+
+[node name="HorseClubs" parent="." instance=ExtResource("3_rrqf0")]
+position = Vector2(122, 321)
+suitedTeam = "clubs"
+
+[node name="HorseHearts" parent="." instance=ExtResource("3_rrqf0")]
+position = Vector2(122, 421)
+suitedTeam = "hearts"
+
+[node name="FinishLine" parent="." instance=ExtResource("4_nty8q")]
+visible = false
+position = Vector2(1127, 184)
+
 [node name="InvisibleTrackers" type="Node2D" parent="."]
-position = Vector2(200, 200)
+position = Vector2(227, 324)
 
 [node name="RacingColumn" parent="InvisibleTrackers" instance=ExtResource("6_44b26")]
 
@@ -65,6 +394,7 @@ position = Vector2(800, 0)
 
 [node name="StartScreen" type="CanvasLayer" parent="."]
 process_mode = 2
+visible = false
 script = ExtResource("6_6jxh7")
 
 [node name="Panel" type="Panel" parent="StartScreen"]
@@ -73,31 +403,33 @@ offset_top = 13.0
 offset_right = 1255.0
 offset_bottom = 703.0
 
-[node name="H1_Input" type="LineEdit" parent="StartScreen"]
-offset_left = 296.0
-offset_top = 34.0
-offset_right = 505.0
-offset_bottom = 74.0
-
-[node name="H1_Label" type="Label" parent="StartScreen"]
+[node name="Spades_NameInput" parent="StartScreen" instance=ExtResource("7_3lpme")]
 offset_left = 169.0
-offset_top = 40.0
-offset_right = 209.0
-offset_bottom = 63.0
-text = "Horse 1 Name: "
+offset_top = 42.0
+offset_right = 169.0
+offset_bottom = 42.0
+index = 1
 
-[node name="H2_Input" type="LineEdit" parent="StartScreen"]
-offset_left = 296.0
-offset_top = 146.0
-offset_right = 505.0
-offset_bottom = 186.0
+[node name="Diamond_NameInput" parent="StartScreen" instance=ExtResource("7_3lpme")]
+offset_left = 168.0
+offset_top = 144.0
+offset_right = 168.0
+offset_bottom = 144.0
+index = 2
 
-[node name="H2_Label" type="Label" parent="StartScreen"]
+[node name="Clubs_NameInput" parent="StartScreen" instance=ExtResource("7_3lpme")]
 offset_left = 169.0
-offset_top = 152.0
-offset_right = 288.0
-offset_bottom = 175.0
-text = "Horse 2 Name: "
+offset_top = 244.0
+offset_right = 169.0
+offset_bottom = 244.0
+index = 3
+
+[node name="Hearts_NameInput" parent="StartScreen" instance=ExtResource("7_3lpme")]
+offset_left = 168.0
+offset_top = 341.0
+offset_right = 168.0
+offset_bottom = 341.0
+index = 4
 
 [node name="RaceButton" type="Button" parent="StartScreen"]
 offset_left = 425.0
@@ -133,14 +465,14 @@ offset_right = 703.0
 offset_bottom = 539.0
 text = "Restart"
 
-[connection signal="deck_clicked" from="DeckOfCards" to="HorseHearts" method="_on_deck_of_cards_deck_clicked"]
-[connection signal="deck_clicked" from="DeckOfCards" to="HorseClubs" method="_on_deck_of_cards_deck_clicked"]
-[connection signal="deck_clicked" from="DeckOfCards" to="HorseDiamonds" method="_on_deck_of_cards_deck_clicked"]
 [connection signal="deck_clicked" from="DeckOfCards" to="HorseSpades" method="_on_deck_of_cards_deck_clicked"]
-[connection signal="penalty_card_flipped" from="DeckOfCards" to="HorseHearts" method="_on_deck_of_cards_penalty_card_flipped"]
-[connection signal="penalty_card_flipped" from="DeckOfCards" to="HorseClubs" method="_on_deck_of_cards_penalty_card_flipped"]
-[connection signal="penalty_card_flipped" from="DeckOfCards" to="HorseDiamonds" method="_on_deck_of_cards_penalty_card_flipped"]
+[connection signal="deck_clicked" from="DeckOfCards" to="HorseDiamonds" method="_on_deck_of_cards_deck_clicked"]
+[connection signal="deck_clicked" from="DeckOfCards" to="HorseClubs" method="_on_deck_of_cards_deck_clicked"]
+[connection signal="deck_clicked" from="DeckOfCards" to="HorseHearts" method="_on_deck_of_cards_deck_clicked"]
 [connection signal="penalty_card_flipped" from="DeckOfCards" to="HorseSpades" method="_on_deck_of_cards_penalty_card_flipped"]
+[connection signal="penalty_card_flipped" from="DeckOfCards" to="HorseDiamonds" method="_on_deck_of_cards_penalty_card_flipped"]
+[connection signal="penalty_card_flipped" from="DeckOfCards" to="HorseClubs" method="_on_deck_of_cards_penalty_card_flipped"]
+[connection signal="penalty_card_flipped" from="DeckOfCards" to="HorseHearts" method="_on_deck_of_cards_penalty_card_flipped"]
 [connection signal="race_finished" from="FinishLine" to="GameOver" method="_on_finish_line_race_finished"]
 [connection signal="race_finished" from="FinishLine" to="GameOver/WinnerLabel" method="_on_finish_line_race_finished"]
 [connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
@@ -152,6 +484,9 @@ text = "Restart"
 [connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn7" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
 [connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn8" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
 [connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn9" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
-[connection signal="text_changed" from="StartScreen/H1_Input" to="StartScreen" method="_on_horse_1_input_text_changed"]
+[connection signal="horse_name_change" from="StartScreen/Spades_NameInput" to="HorseSpades" method="_on_new_name"]
+[connection signal="horse_name_change" from="StartScreen/Diamond_NameInput" to="HorseDiamonds" method="_on_new_name"]
+[connection signal="horse_name_change" from="StartScreen/Clubs_NameInput" to="HorseClubs" method="_on_new_name"]
+[connection signal="horse_name_change" from="StartScreen/Hearts_NameInput" to="HorseHearts" method="_on_new_name"]
 [connection signal="pressed" from="StartScreen/RaceButton" to="StartScreen" method="_on_race_button_pressed"]
 [connection signal="pressed" from="GameOver/Restart" to="GameOver" method="_on_restart_pressed"]

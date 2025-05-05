@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2nsndo1b8jr8"]
+
+[ext_resource type="Script" path="res://scenes/game/NameInput.gd" id="1_rc4mm"]
+
+[node name="NameInput" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rc4mm")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 102.0
+offset_bottom = 28.0
+text = "Horse Name:"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 1.0
+offset_right = 267.0
+offset_bottom = 32.0
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
