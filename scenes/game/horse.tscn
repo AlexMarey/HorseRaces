@@ -19,6 +19,7 @@ flip_h = true
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(-5, 60)
 shape = SubResource("CapsuleShape2D_d2w5k")
 
