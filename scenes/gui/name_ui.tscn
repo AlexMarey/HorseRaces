@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://cis1kii544wtf"]
+
+[ext_resource type="Theme" uid="uid://dtyow6at260xh" path="res://assets/themes/base_theme.tres" id="1_12ad2"]
+[ext_resource type="Theme" uid="uid://ltwuyj0kp3vb" path="res://assets/themes/panel_label.tres" id="2_cdt08"]
+[ext_resource type="PackedScene" uid="uid://d0s5mdahjtngp" path="res://scenes/gui/TextInput.tscn" id="3_i3snw"]
+
+[node name="NameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -780.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelBackground" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 500.0
+theme = ExtResource("1_12ad2")
+
+[node name="BannerHeader" type="Label" parent="PanelBackground"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 490.0
+offset_bottom = 123.0
+theme = ExtResource("2_cdt08")
+text = "Enter Your Horse In The Race Today!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextInput_Lane1" parent="PanelBackground" instance=ExtResource("3_i3snw")]
+layout_mode = 1
+offset_left = 80.0
+offset_top = 150.0
+offset_right = -420.0
+offset_bottom = -350.0
+LabelText = "Lane 1:"
+
+[node name="TextInput_Lane2" parent="PanelBackground" instance=ExtResource("3_i3snw")]
+layout_mode = 1
+offset_left = 80.0
+offset_top = 200.0
+offset_right = -420.0
+offset_bottom = -300.0
+LabelText = "Lane 2:"
+
+[node name="TextInput_Lane3" parent="PanelBackground" instance=ExtResource("3_i3snw")]
+layout_mode = 1
+offset_left = 80.0
+offset_top = 250.0
+offset_right = -420.0
+offset_bottom = -250.0
+LabelText = "Lane 3:"
+
+[node name="TextInput_Lane4" parent="PanelBackground" instance=ExtResource("3_i3snw")]
+layout_mode = 1
+offset_left = 80.0
+offset_top = 300.0
+offset_right = -420.0
+offset_bottom = -200.0
+LabelText = "Lane 4:"
+
+[node name="Button" type="Button" parent="PanelBackground"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 400.0
+offset_right = 300.0
+offset_bottom = 440.0
+text = "Submit"

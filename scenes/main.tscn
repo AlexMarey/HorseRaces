@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ielieykwhr17" path="res://scenes/game/racing_column.tscn" id="6_44b26"]
 [ext_resource type="Script" path="res://scenes/game/GameOver.gd" id="6_bxu6s"]
 [ext_resource type="PackedScene" uid="uid://b2nsndo1b8jr8" path="res://scenes/game/name_input.tscn" id="7_3lpme"]
-[ext_resource type="Theme" uid="uid://dtyow6at260xh" path="res://assets/themes/PanelTheme.tres" id="8_kxihk"]
+[ext_resource type="Theme" uid="uid://dtyow6at260xh" path="res://assets/themes/base_theme.tres" id="8_kxihk"]
 [ext_resource type="Texture2D" uid="uid://cshjmt7y4nj4n" path="res://assets/spritesheet_tiles.png" id="10_4qm77"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_htmrs"]
