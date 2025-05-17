@@ -25,3 +25,12 @@ func _on_area_2d_area_entered(area):
 		if trackedHorses.size() == 4:
 			tracker_reached_max_horses.emit()
 			print("RACING COLUMN - All Horses tracked. Emit 'max horses reached'")
+
+
+func _on_area_2d_body_entered(body):
+	var parent = body.get_parent()
+	if trackedHorses.find(parent.suitedTeam) < 0:
+		trackedHorses.append(parent.suitedTeam)
+		if trackedHorses.size() == 4:
+			tracker_reached_max_horses.emit()
+			print("RACING COLUMN - All Horses tracked. Emit 'max horses reached'")

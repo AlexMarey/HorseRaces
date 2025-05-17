@@ -15,16 +15,15 @@ metadata/_edit_group_ = true
 texture = ExtResource("2_2fyj8")
 flip_h = true
 
-[node name="Area2D" type="Area2D" parent="." groups=["Horses"]]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-position = Vector2(-5, 60)
-shape = SubResource("CapsuleShape2D_d2w5k")
-
 [node name="Label" type="Label" parent="."]
 offset_left = -33.0
 offset_right = 29.0
 offset_bottom = 32.0
 text = "test"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Horses"]]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-5, 60)
+shape = SubResource("CapsuleShape2D_d2w5k")

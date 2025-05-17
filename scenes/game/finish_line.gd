@@ -12,7 +12,11 @@ func _process(delta):
 	pass
 
 
-func _on_area_entered(area: Area2D):
-	if (area.is_in_group("Horses")):
-		var horse = area.get_parent()
-		race_finished.emit(horse.horseName)
+#func _on_area_entered(area: Area2D):
+	#if (area.is_in_group("Horses")):
+		#var horse = area.get_parent()
+		#race_finished.emit(horse.horseName)
+
+func _on_body_entered(body):
+	var horse = body.get_parent()
+	race_finished.emit(horse.horseName)

@@ -366,6 +366,7 @@ visible = false
 position = Vector2(1127, 184)
 
 [node name="InvisibleTrackers" type="Node2D" parent="."]
+visible = false
 position = Vector2(227, 324)
 
 [node name="RacingColumn" parent="InvisibleTrackers" instance=ExtResource("6_44b26")]
