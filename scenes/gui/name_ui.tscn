@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cis1kii544wtf"]
+[gd_scene load_steps=5 format=3 uid="uid://cis1kii544wtf"]
 
 [ext_resource type="Theme" uid="uid://dtyow6at260xh" path="res://assets/themes/base_theme.tres" id="1_12ad2"]
+[ext_resource type="Script" path="res://scenes/gui/NameGui.gd" id="1_p76hq"]
 [ext_resource type="Theme" uid="uid://ltwuyj0kp3vb" path="res://assets/themes/panel_label.tres" id="2_cdt08"]
 [ext_resource type="PackedScene" uid="uid://d0s5mdahjtngp" path="res://scenes/gui/TextInput.tscn" id="3_i3snw"]
 
@@ -13,6 +14,7 @@ offset_right = -780.0
 offset_bottom = -220.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_p76hq")
 
 [node name="PanelBackground" type="Panel" parent="."]
 layout_mode = 0
@@ -70,3 +72,9 @@ offset_top = 400.0
 offset_right = 300.0
 offset_bottom = 440.0
 text = "Submit"
+
+[connection signal="input_changed" from="PanelBackground/TextInput_Lane1" to="." method="_on_text_input_lane_1_input_changed"]
+[connection signal="input_changed" from="PanelBackground/TextInput_Lane2" to="." method="_on_text_input_lane_2_input_changed"]
+[connection signal="input_changed" from="PanelBackground/TextInput_Lane3" to="." method="_on_text_input_lane_3_input_changed"]
+[connection signal="input_changed" from="PanelBackground/TextInput_Lane4" to="." method="_on_text_input_lane_4_input_changed"]
+[connection signal="pressed" from="PanelBackground/Button" to="." method="_on_button_pressed"]

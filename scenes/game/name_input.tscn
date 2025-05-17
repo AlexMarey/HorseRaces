@@ -1,11 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2nsndo1b8jr8"]
+[gd_scene load_steps=2 format=3 uid="uid://mle6dgdk4bif"]
 
-[ext_resource type="Script" path="res://scenes/game/NameInput.gd" id="1_rc4mm"]
+[sub_resource type="GDScript" id="GDScript_8x2br"]
+script/source = "extends Node
+
+signal horse_name_change(horseName: String)
+
+@export var index: int = 0
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	if index >= 1:
+		$Label.text = \"Horse \" + str(index) + \" Name:\"
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_line_edit_text_changed(new_text):
+	horse_name_change.emit(new_text)
+"
 
 [node name="NameInput" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_rc4mm")
+script = SubResource("GDScript_8x2br")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

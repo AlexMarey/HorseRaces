@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://714e8w4rf8od"]
+[gd_scene load_steps=15 format=3 uid="uid://714e8w4rf8od"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_0my83"]
 [ext_resource type="PackedScene" uid="uid://bjha5vsf4053e" path="res://scenes/game/deck_of_cards.tscn" id="3_34by7"]
@@ -8,9 +8,10 @@
 [ext_resource type="Script" path="res://scenes/game/StartScreen.gd" id="6_6jxh7"]
 [ext_resource type="PackedScene" uid="uid://ielieykwhr17" path="res://scenes/game/racing_column.tscn" id="6_44b26"]
 [ext_resource type="Script" path="res://scenes/game/GameOver.gd" id="6_bxu6s"]
-[ext_resource type="PackedScene" uid="uid://b2nsndo1b8jr8" path="res://scenes/game/name_input.tscn" id="7_3lpme"]
 [ext_resource type="Theme" uid="uid://dtyow6at260xh" path="res://assets/themes/base_theme.tres" id="8_kxihk"]
 [ext_resource type="Texture2D" uid="uid://cshjmt7y4nj4n" path="res://assets/spritesheet_tiles.png" id="10_4qm77"]
+[ext_resource type="Theme" uid="uid://ltwuyj0kp3vb" path="res://assets/themes/panel_label.tres" id="11_2sk3p"]
+[ext_resource type="PackedScene" uid="uid://cis1kii544wtf" path="res://scenes/gui/name_ui.tscn" id="12_npe6i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_htmrs"]
 resource_name = "Racetrack"
@@ -394,77 +395,60 @@ position = Vector2(700, 0)
 position = Vector2(800, 0)
 
 [node name="StartScreen" type="CanvasLayer" parent="."]
-process_mode = 2
+process_mode = 3
+visible = false
 script = ExtResource("6_6jxh7")
 
-[node name="Panel" type="Panel" parent="StartScreen"]
-offset_left = 25.0
-offset_top = 13.0
-offset_right = 1255.0
-offset_bottom = 703.0
-theme = ExtResource("8_kxihk")
-
-[node name="Spades_NameInput" parent="StartScreen" instance=ExtResource("7_3lpme")]
-offset_left = 169.0
-offset_top = 42.0
-offset_right = 169.0
-offset_bottom = 42.0
-index = 1
-
-[node name="Diamond_NameInput" parent="StartScreen" instance=ExtResource("7_3lpme")]
-offset_left = 168.0
-offset_top = 144.0
-offset_right = 168.0
-offset_bottom = 144.0
-index = 2
-
-[node name="Clubs_NameInput" parent="StartScreen" instance=ExtResource("7_3lpme")]
-offset_left = 169.0
-offset_top = 244.0
-offset_right = 169.0
-offset_bottom = 244.0
-index = 3
-
-[node name="Hearts_NameInput" parent="StartScreen" instance=ExtResource("7_3lpme")]
-offset_left = 168.0
-offset_top = 341.0
-offset_right = 168.0
-offset_bottom = 341.0
-index = 4
-
-[node name="RaceButton" type="Button" parent="StartScreen"]
-offset_left = 425.0
-offset_top = 472.0
-offset_right = 729.0
-offset_bottom = 623.0
-text = "Race!"
+[node name="NameUI" parent="StartScreen" node_paths=PackedStringArray("horses") instance=ExtResource("12_npe6i")]
+offset_left = 339.0
+offset_top = 93.0
+offset_right = -441.0
+offset_bottom = -127.0
+horses = [NodePath("../../HorseSpades"), NodePath("../../HorseDiamonds"), NodePath("../../HorseClubs"), NodePath("../../HorseHearts")]
 
 [node name="GameOver" type="CanvasLayer" parent="."]
 process_mode = 2
-visible = false
 script = ExtResource("6_bxu6s")
 
-[node name="Panel" type="Panel" parent="GameOver"]
-modulate = Color(0.227873, 0.450218, 0.211009, 1)
-offset_left = 31.0
-offset_top = 15.0
-offset_right = 1270.0
-offset_bottom = 706.0
-
 [node name="WinnerLabel" type="Label" parent="GameOver"]
-offset_left = 452.0
-offset_top = 191.0
-offset_right = 807.0
-offset_bottom = 279.0
+offset_left = 337.0
+offset_top = 18.0
+offset_right = 1023.0
+offset_bottom = 182.0
+theme = ExtResource("11_2sk3p")
 theme_override_font_sizes/font_size = 64
 script = ExtResource("5_5m2k4")
 
-[node name="Restart" type="Button" parent="GameOver"]
-offset_left = 501.0
-offset_top = 454.0
-offset_right = 703.0
-offset_bottom = 539.0
-text = "Restart"
+[node name="Panel" type="Panel" parent="GameOver"]
+offset_left = 399.0
+offset_top = 473.0
+offset_right = 919.0
+offset_bottom = 648.0
+theme = ExtResource("8_kxihk")
+
+[node name="Race Again" type="Button" parent="GameOver/Panel"]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 65.0
+offset_right = 495.0
+offset_bottom = 115.0
+text = "Race Again"
+
+[node name="New Horses" type="Button" parent="GameOver/Panel"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 65.0
+offset_right = 335.0
+offset_bottom = 115.0
+text = "New Horses"
+
+[node name="Exit" type="Button" parent="GameOver/Panel"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 65.0
+offset_right = 175.0
+offset_bottom = 115.0
+text = "Exit"
 
 [connection signal="deck_clicked" from="DeckOfCards" to="HorseSpades" method="_on_deck_of_cards_deck_clicked"]
 [connection signal="deck_clicked" from="DeckOfCards" to="HorseDiamonds" method="_on_deck_of_cards_deck_clicked"]
@@ -485,9 +469,5 @@ text = "Restart"
 [connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn7" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
 [connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn8" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
 [connection signal="tracker_reached_max_horses" from="InvisibleTrackers/RacingColumn9" to="DeckOfCards" method="_on_racing_column_tracker_reached_max_horses"]
-[connection signal="horse_name_change" from="StartScreen/Spades_NameInput" to="HorseSpades" method="_on_new_name"]
-[connection signal="horse_name_change" from="StartScreen/Diamond_NameInput" to="HorseDiamonds" method="_on_new_name"]
-[connection signal="horse_name_change" from="StartScreen/Clubs_NameInput" to="HorseClubs" method="_on_new_name"]
-[connection signal="horse_name_change" from="StartScreen/Hearts_NameInput" to="HorseHearts" method="_on_new_name"]
-[connection signal="pressed" from="StartScreen/RaceButton" to="StartScreen" method="_on_race_button_pressed"]
-[connection signal="pressed" from="GameOver/Restart" to="GameOver" method="_on_restart_pressed"]
+[connection signal="start_button_pressed" from="StartScreen/NameUI" to="StartScreen" method="_on_name_ui_start_button_pressed"]
+[connection signal="pressed" from="GameOver/Panel/Race Again" to="GameOver" method="_on_restart_pressed"]
