@@ -17,20 +17,19 @@ func _draw():
 	draw_line(Vector2(-50,-200), Vector2(-50, 200),Color.PERU, 5.0)
 	pass
 
-func _on_area_2d_area_entered(area):
-	# if horse is unique, add it to trackHorses
-	var parent = area.get_parent();
-	if trackedHorses.find(parent.suitedTeam) < 0:
-		trackedHorses.append(parent.suitedTeam)
-		if trackedHorses.size() == 4:
-			tracker_reached_max_horses.emit()
-			print("RACING COLUMN - All Horses tracked. Emit 'max horses reached'")
+#func _on_area_2d_area_entered(area):
+	## if horse is unique, add it to trackHorses
+	#var parent = area.get_parent();
+	#if trackedHorses.find(parent.suitedTeam) < 0:
+		#trackedHorses.append(parent.suitedTeam)
+		#if trackedHorses.size() == 4:
+			#tracker_reached_max_horses.emit()
+			#print("RACING COLUMN - All Horses tracked. Emit 'max horses reached'")
 
 
 func _on_area_2d_body_entered(body):
-	var parent = body.get_parent()
-	if trackedHorses.find(parent.suitedTeam) < 0:
-		trackedHorses.append(parent.suitedTeam)
+	if trackedHorses.find(body.suitedTeam) < 0:
+		trackedHorses.append(body.suitedTeam)
 		if trackedHorses.size() == 4:
 			tracker_reached_max_horses.emit()
 			print("RACING COLUMN - All Horses tracked. Emit 'max horses reached'")

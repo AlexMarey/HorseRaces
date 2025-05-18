@@ -18,5 +18,4 @@ func _process(delta):
 		#race_finished.emit(horse.horseName)
 
 func _on_body_entered(body):
-	var horse = body.get_parent()
-	race_finished.emit(horse.horseName)
+	race_finished.emit(body.horseName)

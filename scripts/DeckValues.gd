@@ -1,7 +1,7 @@
 extends Node
 
 const CLUBS = 'clubs'
-const DIAMONDS = 'diamond'
+const DIAMONDS = 'diamonds'
 const HEARTS = 'hearts'
 const SPADES = 'spades'
 const TWO = '2'
