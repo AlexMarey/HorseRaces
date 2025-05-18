@@ -5,10 +5,6 @@ func _ready():
 	get_tree().paused = true
 	self.show()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func _on_name_ui_start_button_pressed():
 	get_tree().paused = false
 	self.hide()

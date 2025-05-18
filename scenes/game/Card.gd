@@ -17,10 +17,6 @@ func _ready():
 	deck.connect("penalty_card_flipped", flip_card)
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func flip_card(suitReceived: int, valueReceived: int):
 	if(suitIndex == suitReceived and valueIndex == valueReceived):
 		print("CARD - Card found, playing: "+ animationName)

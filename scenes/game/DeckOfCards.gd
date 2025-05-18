@@ -12,10 +12,6 @@ func _ready():
 	setup_deck()
 	create_cards()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
 func _draw():
 	draw_rect(Rect2(-38.5, -51, 152, 102), Color.FOREST_GREEN, false, 2.0)
 

@@ -10,10 +10,6 @@ func _ready():
 	for horse in horses: 
 		horseNames.append(horse.horseName)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func _on_button_pressed():
 	# Set Horses Names
 	var index = 0

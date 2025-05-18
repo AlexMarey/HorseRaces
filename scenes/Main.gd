@@ -1,7 +1,8 @@
 extends Node
 
 # To Do: 
-# Polish Game - Better animations, race track background, sounds, better ui look
+# Polish Game - sound effects, better ui look, more buttons, racing lines,
+#   queue travel, movement is stopped on game end + movement back is stopped half way on penalty card
 # Done
 # Extra Ideas
 # Automatic mode - no deck clicks just go
@@ -11,7 +12,3 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
