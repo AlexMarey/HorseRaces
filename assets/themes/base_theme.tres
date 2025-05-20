@@ -1,7 +1,16 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dtyow6at260xh"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dtyow6at260xh"]
 
 [ext_resource type="Texture2D" uid="uid://cbqq4hoga2koe" path="res://assets/gui/greySheet.png" id="1_eompi"]
 [ext_resource type="Texture2D" uid="uid://b5qrheyjo2vkv" path="res://assets/gui/spritesheet-double.png" id="2_m4a05"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3f5b3"]
+texture = ExtResource("1_eompi")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(0, 143, 190, 46)
+modulate_color = Color(0.666569, 0.666569, 0.666569, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lcfwc"]
 texture = ExtResource("1_eompi")
@@ -45,10 +54,12 @@ region_rect = Rect2(896, 768, 128, 128)
 
 [resource]
 Button/colors/font_color = Color(0.113725, 0.113725, 0.113725, 1)
+Button/colors/font_disabled_color = Color(0.362829, 0.362829, 0.362829, 1)
 Button/colors/font_focus_color = Color(0.113725, 0.113725, 0.113725, 1)
 Button/colors/font_hover_color = Color(0.113725, 0.113725, 0.113725, 1)
 Button/colors/font_hover_pressed_color = Color(0.113725, 0.113725, 0.113725, 1)
 Button/colors/font_pressed_color = Color(0.113725, 0.113725, 0.113725, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_3f5b3")
 Button/styles/hover = SubResource("StyleBoxTexture_lcfwc")
 Button/styles/normal = SubResource("StyleBoxTexture_l2kda")
 Button/styles/pressed = SubResource("StyleBoxTexture_1gg0s")

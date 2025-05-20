@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7r51h5nxqg4w"]
+
+[ext_resource type="Script" path="res://scenes/game/horse_character.gd" id="1_4ka55"]
+[ext_resource type="Texture2D" uid="uid://bcaixjaxt7tm1" path="res://assets/character_horse.png" id="2_br8bc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ph1m3"]
+radius = 28.0
+height = 84.0
+
+[node name="HorseCharacter" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_4ka55")
+suitedTeam = null
+horseName = null
+travelDistance = null
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -70)
+texture = ExtResource("2_br8bc")
+flip_h = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -50.0
+offset_top = -64.0
+offset_right = 50.0
+offset_bottom = -41.0
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -6)
+shape = SubResource("CapsuleShape2D_ph1m3")

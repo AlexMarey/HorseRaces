@@ -208,7 +208,7 @@ animations = [{
 "texture": ExtResource("16_ucbuw")
 }],
 "loop": false,
-"name": &"diamond10",
+"name": &"diamonds10",
 "speed": 5.0
 }, {
 "frames": [{
@@ -219,7 +219,7 @@ animations = [{
 "texture": ExtResource("17_v103b")
 }],
 "loop": false,
-"name": &"diamond2",
+"name": &"diamonds2",
 "speed": 5.0
 }, {
 "frames": [{
@@ -230,7 +230,7 @@ animations = [{
 "texture": ExtResource("18_kk11t")
 }],
 "loop": false,
-"name": &"diamond3",
+"name": &"diamonds3",
 "speed": 5.0
 }, {
 "frames": [{
@@ -241,7 +241,7 @@ animations = [{
 "texture": ExtResource("19_06tlc")
 }],
 "loop": false,
-"name": &"diamond4",
+"name": &"diamonds4",
 "speed": 5.0
 }, {
 "frames": [{
@@ -252,7 +252,7 @@ animations = [{
 "texture": ExtResource("20_mkvs5")
 }],
 "loop": false,
-"name": &"diamond5",
+"name": &"diamonds5",
 "speed": 5.0
 }, {
 "frames": [{
@@ -263,7 +263,7 @@ animations = [{
 "texture": ExtResource("21_uw1f2")
 }],
 "loop": false,
-"name": &"diamond6",
+"name": &"diamonds6",
 "speed": 5.0
 }, {
 "frames": [{
@@ -274,7 +274,7 @@ animations = [{
 "texture": ExtResource("22_1chxq")
 }],
 "loop": false,
-"name": &"diamond7",
+"name": &"diamonds7",
 "speed": 5.0
 }, {
 "frames": [{
@@ -285,7 +285,7 @@ animations = [{
 "texture": ExtResource("23_bu26u")
 }],
 "loop": false,
-"name": &"diamond8",
+"name": &"diamonds8",
 "speed": 5.0
 }, {
 "frames": [{
@@ -296,7 +296,7 @@ animations = [{
 "texture": ExtResource("24_p0yeb")
 }],
 "loop": false,
-"name": &"diamond9",
+"name": &"diamonds9",
 "speed": 5.0
 }, {
 "frames": [{
@@ -307,7 +307,7 @@ animations = [{
 "texture": ExtResource("25_kn8sd")
 }],
 "loop": false,
-"name": &"diamondAce",
+"name": &"diamondsAce",
 "speed": 5.0
 }, {
 "frames": [{
@@ -318,7 +318,7 @@ animations = [{
 "texture": ExtResource("26_rkhxd")
 }],
 "loop": false,
-"name": &"diamondJack",
+"name": &"diamondsJack",
 "speed": 5.0
 }, {
 "frames": [{
@@ -329,7 +329,7 @@ animations = [{
 "texture": ExtResource("27_p3ok8")
 }],
 "loop": false,
-"name": &"diamondKing",
+"name": &"diamondsKing",
 "speed": 5.0
 }, {
 "frames": [{
@@ -340,7 +340,7 @@ animations = [{
 "texture": ExtResource("28_err4n")
 }],
 "loop": false,
-"name": &"diamondQueen",
+"name": &"diamondsQueen",
 "speed": 5.0
 }, {
 "frames": [{
@@ -640,7 +640,7 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ag51b")
-animation = &"spadesQueen"
+animation = &"diamonds2"
 
 [node name="Area2D" type="Area2D" parent="."]
 

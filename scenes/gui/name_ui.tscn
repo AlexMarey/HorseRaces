@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://ltwuyj0kp3vb" path="res://assets/themes/panel_label.tres" id="2_cdt08"]
 [ext_resource type="PackedScene" uid="uid://d0s5mdahjtngp" path="res://scenes/gui/TextInput.tscn" id="3_i3snw"]
 
-[node name="NameUI" type="Control"]
+[node name="NameUI" type="Control" node_paths=PackedStringArray("horses", "submitButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,6 +15,8 @@ offset_bottom = -220.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p76hq")
+horses = [null, null, null, null]
+submitButton = NodePath("PanelBackground/SubmitButton")
 
 [node name="PanelBackground" type="Panel" parent="."]
 layout_mode = 0
@@ -65,16 +67,26 @@ offset_right = -420.0
 offset_bottom = -200.0
 LabelText = "Lane 4:"
 
-[node name="Button" type="Button" parent="PanelBackground"]
+[node name="SubmitButton" type="Button" parent="PanelBackground"]
 layout_mode = 0
-offset_left = 200.0
+offset_left = 265.0
 offset_top = 400.0
-offset_right = 300.0
+offset_right = 365.0
 offset_bottom = 440.0
+disabled = true
 text = "Submit"
 
-[connection signal="input_changed" from="PanelBackground/TextInput_Lane1" to="." method="_on_text_input_lane_1_input_changed"]
-[connection signal="input_changed" from="PanelBackground/TextInput_Lane2" to="." method="_on_text_input_lane_2_input_changed"]
-[connection signal="input_changed" from="PanelBackground/TextInput_Lane3" to="." method="_on_text_input_lane_3_input_changed"]
-[connection signal="input_changed" from="PanelBackground/TextInput_Lane4" to="." method="_on_text_input_lane_4_input_changed"]
-[connection signal="pressed" from="PanelBackground/Button" to="." method="_on_button_pressed"]
+[node name="SkipButton" type="Button" parent="PanelBackground"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 400.0
+offset_right = 235.0
+offset_bottom = 440.0
+text = "Skip"
+
+[connection signal="input_changed" from="PanelBackground/TextInput_Lane1" to="." method="_on_text_input_changed" binds= [0]]
+[connection signal="input_changed" from="PanelBackground/TextInput_Lane2" to="." method="_on_text_input_changed" binds= [1]]
+[connection signal="input_changed" from="PanelBackground/TextInput_Lane3" to="." method="_on_text_input_changed" binds= [2]]
+[connection signal="input_changed" from="PanelBackground/TextInput_Lane4" to="." method="_on_text_input_changed" binds= [3]]
+[connection signal="pressed" from="PanelBackground/SubmitButton" to="." method="_on_submit_button_pressed"]
+[connection signal="pressed" from="PanelBackground/SkipButton" to="." method="_on_skip_button_pressed"]
