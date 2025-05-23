@@ -6,7 +6,7 @@ signal start_button_pressed()
 var horseNames: Array[String] = []
 
 @export var submitButton: Button
-
+@onready var audio_player := $AudioStreamPlayer2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for horse in horses: 
@@ -30,12 +30,14 @@ func _on_submit_button_pressed():
 		
 	# Start the game
 	start_button_pressed.emit()
+	audio_player.play()
 
 func _on_skip_button_pressed():
 	for horse in horses:
 		horse.horseName = horse.suitedTeam.capitalize()
 	# Start the game
 	start_button_pressed.emit()
+	audio_player.play()
 
 # Track Horses Names
 func _on_text_input_changed(new_text, index):

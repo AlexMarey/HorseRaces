@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://jytrr8slxh71"]
+[gd_scene load_steps=58 format=3 uid="uid://jytrr8slxh71"]
 
 [ext_resource type="Script" path="res://scenes/game/Card.gd" id="1_ic4m4"]
 [ext_resource type="Texture2D" uid="uid://bk1xrp3empvqg" path="res://assets/Cards/cardBack_blue4.png" id="2_2ahrb"]
@@ -54,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://irxef0sji8a8" path="res://assets/Cards/cardSpadesJ.png" id="52_aigbr"]
 [ext_resource type="Texture2D" uid="uid://b1ly05dcwhcfc" path="res://assets/Cards/cardSpadesK.png" id="53_ueao4"]
 [ext_resource type="Texture2D" uid="uid://c3jymv0ypqeny" path="res://assets/Cards/cardSpadesQ.png" id="54_fi13t"]
+[ext_resource type="AudioStream" uid="uid://biqtfqksxt0se" path="res://assets/gui/sounds/tap-b.ogg" id="55_80ct4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ag51b"]
 animations = [{
@@ -646,5 +647,11 @@ animation = &"diamonds2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_cihkp")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("55_80ct4")
+volume_db = -7.5
+pitch_scale = 1.25
+bus = &"SFX"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
