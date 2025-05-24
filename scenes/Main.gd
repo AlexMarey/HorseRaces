@@ -3,8 +3,8 @@ extends Node
 # To Do: 
 # - End screen buttons 
 # - Title Screen, Scene Manager, How to Play Screen 
-# - Complete full movement on game end
 # - Add suit symbols to horses back
+# - Resize game windows
 
 # Extra Ideas
 # Automatic mode - no deck clicks just go
@@ -14,6 +14,11 @@ extends Node
 # Cleanup 
 #  - Sound Manager Class/Node that can be used for all game sounds
 #  - use @onready for any references to child nodes
+
+
+# Scenes
+
+# Game State
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
