@@ -1,7 +1,6 @@
 extends Node
 
 # To Do: 
-# - Sound effects 
 # - End screen buttons 
 # - Title Screen, Scene Manager, How to Play Screen 
 # - Complete full movement on game end
@@ -11,6 +10,10 @@ extends Node
 # Automatic mode - no deck clicks just go
 # Betting - Create Odds based on deck/penalty deck?
 # Campaign mode - Own a horse, influence the deck, bet on cards
+
+# Cleanup 
+#  - Sound Manager Class/Node that can be used for all game sounds
+#  - use @onready for any references to child nodes
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
