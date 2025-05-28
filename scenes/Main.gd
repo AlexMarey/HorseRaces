@@ -1,10 +1,12 @@
 extends Node
 
 # To Do: 
+# - Scene Manager
 # - End screen buttons 
-# - Title Screen, Scene Manager, How to Play Screen 
+# - Title Screen, How to Play Screen 
 # - Add suit symbols to horses back
 # - Resize game windows
+# - Score
 
 # Extra Ideas
 # Automatic mode - no deck clicks just go
@@ -19,6 +21,8 @@ extends Node
 # Scenes
 
 # Game State
+# - Knows to let horses keep moving and emit game over at the end
+# - What scene to load?
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
