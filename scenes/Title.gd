@@ -1,9 +1,6 @@
 extends Node
 
-
 @onready var htp_panel = $HowToPlayPanel
-
-
 
 func _on_htp_close_button_pressed():
 	htp_panel.visible = false
