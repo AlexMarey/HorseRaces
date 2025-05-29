@@ -2,8 +2,7 @@ extends Node
 
 # To Do: 
 # - Scene Manager
-# - End screen buttons 
-# - Title Screen, How to Play Screen 
+# - How to Play Screen 
 # - Add suit symbols to horses back
 # - Resize game windows
 # - Score

@@ -1,5 +1,5 @@
 extends CanvasLayer
-
+var TitleScreen = load("res://scenes/Title.tscn")
 @onready var winner_label := $WinnerLabel
 
 # Called when the node enters the scene tree for the first time.
@@ -18,3 +18,7 @@ func _on_restart_pressed():
 func _on_finish_line_race_finished(raceWinner):
 	winner_label.text = raceWinner.capitalize() + " Wins!!!"
 	game_over()
+
+func _on_exit_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_packed(TitleScreen)
