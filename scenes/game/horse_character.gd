@@ -1,6 +1,9 @@
 class_name Horse
 extends CharacterBody2D
 
+@onready var label = $Label
+@onready var sprite = $Sprite2D
+
 @export var suitedTeam: String = ""
 @export var horseName: String = ""
 
@@ -16,14 +19,25 @@ var lowerBoundRotation = 2.5
 var destinationQueue: Array[Vector2] = []
 
 func _ready():
+	_set_suited_sprite(suitedTeam)
 	startingPosition = position
 
+func _set_suited_sprite(suit: String):
+	if suit == DeckValues.HEARTS:
+		sprite.texture = load("res://assets/horses/character_horse-hearts.png")
+	elif suit == DeckValues.DIAMONDS:
+		sprite.texture = load("res://assets/horses/character_horse-diamonds.png")
+	elif suit == DeckValues.CLUBS:
+		sprite.texture = load("res://assets/horses/character_horse-clubs.png")
+	elif suit == DeckValues.SPADES:
+		sprite.texture = load("res://assets/horses/character_horse-spades.png")
+
 func _process(delta):
-	if $Label.text != horseName:
-		$Label.text = horseName
-	elif $Label.text.length() <= 0:
+	if label.text != horseName:
+		label.text = horseName
+	elif label.text.length() <= 0:
 		horseName = suitedTeam.capitalize()
-		$Label.text = suitedTeam.capitalize()
+		label.text = suitedTeam.capitalize()
 
 func _physics_process(delta):
 	if destinationQueue.size() > 0:
@@ -38,11 +52,11 @@ func _physics_process(delta):
 	move_and_slide()
 
 func oscilate_sprite(delta):
-	if $Sprite2D.rotation_degrees < upperBoundRotation: 
+	if sprite.rotation_degrees < upperBoundRotation: 
 		rotationDirection = 1.0
-	elif $Sprite2D.rotation_degrees > lowerBoundRotation: 
+	elif sprite.rotation_degrees > lowerBoundRotation: 
 		rotationDirection = -1.0
-	$Sprite2D.rotation += rotationDirection * rotationSpeed * delta
+	sprite.rotation += rotationDirection * rotationSpeed * delta
 
 func _on_deck_of_cards_deck_clicked(suit: int, value: int):
 	if(DeckValues.suitLookup.get(suit) == suitedTeam):

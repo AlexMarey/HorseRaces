@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://df0h0c34tx53o"]
+[gd_scene load_steps=10 format=3 uid="uid://df0h0c34tx53o"]
 
 [ext_resource type="Texture2D" uid="uid://cshjmt7y4nj4n" path="res://assets/spritesheet_tiles.png" id="1_v12dw"]
 [ext_resource type="Script" path="res://scenes/Title.gd" id="1_yv1mk"]
@@ -331,6 +331,10 @@ font_size = 64
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_6sajr"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="GDScript" id="GDScript_bh7wx"]
 script/source = "extends Button
 
@@ -354,26 +358,26 @@ format = 2
 layer_0/tile_data = PackedInt32Array(0, 720896, 13, 1, 720896, 13, 2, 720896, 13, 3, 720896, 13, 4, 720896, 13, 5, 720896, 13, 6, 720896, 13, 7, 720896, 13, 8, 720896, 13, 9, 720896, 13, 65545, 720896, 13, 65544, 720896, 13, 65543, 720896, 13, 65542, 720896, 13, 65541, 720896, 13, 65540, 720896, 13, 65539, 720896, 13, 65538, 720896, 13, 65537, 720896, 13, 65536, 720896, 13, 131072, 720896, 13, 131073, 786432, 5, 131074, 720896, 15, 131075, 720896, 15, 131076, 720896, 15, 131077, 720896, 15, 131078, 720896, 15, 131079, 720896, 15, 131080, 786432, 4, 131081, 720896, 13, 196617, 720896, 13, 196616, 786432, 3, 196615, 786432, 9, 196614, 1048576, 3, 196613, 1048576, 3, 196612, 1048576, 3, 196611, 1048576, 3, 196610, 786432, 11, 196609, 786432, 1, 196608, 720896, 13, 262144, 720896, 13, 262145, 786432, 0, 262146, 720896, 11, 262147, 720896, 11, 262148, 720896, 11, 262149, 720896, 11, 262150, 720896, 11, 262151, 720896, 11, 262152, 720896, 17, 262153, 720896, 13, 327689, 720896, 13, 327688, 720896, 13, 327687, 720896, 13, 327686, 720896, 13, 327685, 720896, 13, 327684, 720896, 13, 327683, 720896, 13, 327682, 720896, 13, 327681, 720896, 13, 327680, 720896, 13)
 
 [node name="StartGameButton" type="Button" parent="."]
-offset_left = 855.0
-offset_top = 554.0
-offset_right = 982.0
-offset_bottom = 608.0
+offset_left = 800.0
+offset_top = 550.0
+offset_right = 1000.0
+offset_bottom = 625.0
 theme = ExtResource("3_uai38")
 text = "Start!"
 
 [node name="HowToPlayButton" type="Button" parent="."]
-offset_left = 526.0
-offset_top = 545.0
-offset_right = 745.0
-offset_bottom = 613.0
+offset_left = 550.0
+offset_top = 550.0
+offset_right = 750.0
+offset_bottom = 625.0
 theme = ExtResource("3_uai38")
 text = "How to Play"
 
 [node name="ExitButton" type="Button" parent="."]
-offset_left = 301.0
-offset_top = 556.0
-offset_right = 441.0
-offset_bottom = 606.0
+offset_left = 300.0
+offset_top = 550.0
+offset_right = 500.0
+offset_bottom = 625.0
 theme = ExtResource("3_uai38")
 text = "Quit"
 
@@ -402,7 +406,14 @@ offset_left = 39.0
 offset_top = 32.0
 offset_right = 651.0
 offset_bottom = 383.0
-text = "lorum ipsum text on how to play the game"
+text = "Objective: 
+To acquire the most money after 10 races.
+
+How to Play: 
+Each race you can bet on one horse to win it all! You 
+can bet as much or as little as you want but be careful 
+to not run out of money."
+label_settings = SubResource("LabelSettings_6sajr")
 
 [node name="CloseButton" type="Button" parent="HowToPlayPanel"]
 layout_mode = 0

@@ -1,11 +1,9 @@
 extends Node
 
 # To Do: 
-# - Scene Manager
-# - How to Play Screen 
-# - Add suit symbols to horses back
-# - Resize game windows
 # - Score
+#   - Starting money, set odds on each horse, bet on a horse
+#   - Games ends if 0 money or after 10 races
 
 # Extra Ideas
 # Automatic mode - no deck clicks just go
@@ -16,6 +14,8 @@ extends Node
 #  - Sound Manager Class/Node that can be used for all game sounds
 #  - use @onready for any references to child nodes
 
+# Further Learning 
+# - Scene Manager that scans folder and can switch scenes?
 
 # Scenes
 

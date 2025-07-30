@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch05iht5xiohr"]
+
+[ext_resource type="PackedScene" uid="uid://ielieykwhr17" path="res://scenes/game/racing_column.tscn" id="1_64aan"]
+[ext_resource type="Script" path="res://scenes/game/invisible_trackers.gd" id="1_wdw8o"]
+
+[node name="InvisibleTrackers" type="Node2D"]
+z_index = -1
+position = Vector2(227, 324)
+script = ExtResource("1_wdw8o")
+
+[node name="RacingColumn" parent="." instance=ExtResource("1_64aan")]
+
+[node name="RacingColumn2" parent="." instance=ExtResource("1_64aan")]
+position = Vector2(100, 0)
+
+[node name="RacingColumn3" parent="." instance=ExtResource("1_64aan")]
+position = Vector2(200, 0)
+
+[node name="RacingColumn4" parent="." instance=ExtResource("1_64aan")]
+position = Vector2(300, 0)
+
+[node name="RacingColumn5" parent="." instance=ExtResource("1_64aan")]
+position = Vector2(400, 0)
+
+[node name="RacingColumn6" parent="." instance=ExtResource("1_64aan")]
+position = Vector2(500, 0)
+
+[node name="RacingColumn7" parent="." instance=ExtResource("1_64aan")]
+position = Vector2(600, 0)
+
+[node name="RacingColumn8" parent="." instance=ExtResource("1_64aan")]
+position = Vector2(700, 0)
+
+[node name="RacingColumn9" parent="." instance=ExtResource("1_64aan")]
+position = Vector2(800, 0)

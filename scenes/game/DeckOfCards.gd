@@ -77,7 +77,6 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		deck_clicked.emit(deck[0][0],deck[0][1])
 		deck.pop_front()
 
-func _on_racing_column_tracker_reached_max_horses():
+func _on_invisible_trackers_max_horses_in_column():
 	penalty_card_flipped.emit(penaltyDeck[0][0], penaltyDeck[0][1])
-	#deck_clicked.emit(penaltyDeck[0][0], penaltyDeck[0][1])
 	penaltyDeck.pop_front()

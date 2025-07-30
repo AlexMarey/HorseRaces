@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://cthjgvfq1r0mv"]
+
+[ext_resource type="Script" path="res://scenes/campaign/Campaign.gd" id="1_2j8lp"]
+[ext_resource type="Script" path="res://scenes/campaign/ScoreManager.gd" id="2_qif70"]
+[ext_resource type="Script" path="res://scenes/campaign/StateManager.gd" id="2_ybb8l"]
+[ext_resource type="Script" path="res://scenes/campaign/RoundManager.gd" id="3_cjy4u"]
+[ext_resource type="Script" path="res://scenes/campaign/BettingManager.gd" id="4_mciwp"]
+[ext_resource type="TileSet" uid="uid://uki0o4scgys4" path="res://assets/Tracks.tres" id="5_xmur0"]
+[ext_resource type="PackedScene" uid="uid://bjha5vsf4053e" path="res://scenes/game/deck_of_cards.tscn" id="6_fsd2g"]
+[ext_resource type="PackedScene" uid="uid://cwkodsil2w88s" path="res://scenes/game/finish_line.tscn" id="7_eafmd"]
+[ext_resource type="PackedScene" uid="uid://ch05iht5xiohr" path="res://scenes/game/invisible_trackers.tscn" id="8_bb58b"]
+[ext_resource type="PackedScene" uid="uid://b7r51h5nxqg4w" path="res://scenes/game/horse_character.tscn" id="9_60uky"]
+
+[node name="Campaign" type="Node"]
+script = ExtResource("1_2j8lp")
+
+[node name="StateManager" type="Node" parent="."]
+script = ExtResource("2_ybb8l")
+
+[node name="ScoreManager" type="Node" parent="."]
+script = ExtResource("2_qif70")
+
+[node name="RoundManager" type="Node" parent="."]
+script = ExtResource("3_cjy4u")
+
+[node name="BettingManager" type="Node" parent="."]
+script = ExtResource("4_mciwp")
+
+[node name="Background" type="TileMap" parent="."]
+tile_set = ExtResource("5_xmur0")
+format = 2
+layer_0/z_index = -1
+layer_0/tile_data = PackedInt32Array(65536, 786432, 1, 131072, 786432, 1, 196608, 786432, 1, 0, 786432, 5, 262145, 720896, 11, 262146, 720896, 11, 262148, 720896, 11, 262149, 720896, 11, 262150, 720896, 11, 262152, 720896, 11, 262144, 786432, 0, 262147, 720896, 11, 196616, 786432, 9, 131080, 786432, 9, 65544, 786432, 9, 262151, 720896, 11, 1, 720896, 15, 2, 720896, 15, 3, 720896, 15, 4, 720896, 15, 5, 720896, 15, 6, 720896, 15, 7, 720896, 15, 8, 720896, 15, 9, 786432, 4, 262153, 720896, 17, 65545, 786432, 3, 131081, 786432, 3, 196617, 786432, 3, 65537, 0, 9, 65538, 0, 9, 65539, 0, 9, 65540, 0, 9, 65541, 0, 9, 65542, 0, 9, 65543, 0, 9, 131079, 0, 9, 131078, 0, 9, 131077, 0, 9, 131076, 0, 9, 131075, 0, 9, 131074, 0, 9, 131073, 0, 9, 196609, 0, 9, 196610, 0, 9, 196611, 0, 9, 196612, 0, 9, 196613, 0, 9, 196614, 0, 9, 196615, 0, 9, 327680, 786432, 2, 327681, 786432, 2, 327682, 786432, 2, 327683, 786432, 2, 327684, 786432, 2, 327685, 786432, 2, 327686, 786432, 2, 327687, 786432, 2, 327688, 786432, 2, 327689, 786432, 2)
+
+[node name="DeckOfCards" parent="." instance=ExtResource("6_fsd2g")]
+position = Vector2(61, 651)
+
+[node name="FinishLine" parent="." instance=ExtResource("7_eafmd")]
+visible = false
+position = Vector2(1142, 177)
+
+[node name="InvisibleTrackers" parent="." instance=ExtResource("8_bb58b")]
+
+[node name="HeartHorse" parent="." instance=ExtResource("9_60uky")]
+position = Vector2(122, 188)
+suitedTeam = "hearts"
+
+[node name="ClubHorse" parent="." instance=ExtResource("9_60uky")]
+position = Vector2(122, 290)
+suitedTeam = "clubs"
+
+[node name="DiamondHorse" parent="." instance=ExtResource("9_60uky")]
+position = Vector2(122, 391)
+suitedTeam = "diamonds"
+
+[node name="SpadeHorse" parent="." instance=ExtResource("9_60uky")]
+position = Vector2(122, 490)
+suitedTeam = "spades"
+
+[connection signal="deck_clicked" from="DeckOfCards" to="HeartHorse" method="_on_deck_of_cards_deck_clicked"]
+[connection signal="deck_clicked" from="DeckOfCards" to="ClubHorse" method="_on_deck_of_cards_deck_clicked"]
+[connection signal="deck_clicked" from="DeckOfCards" to="DiamondHorse" method="_on_deck_of_cards_deck_clicked"]
+[connection signal="deck_clicked" from="DeckOfCards" to="SpadeHorse" method="_on_deck_of_cards_deck_clicked"]
+[connection signal="penalty_card_flipped" from="DeckOfCards" to="HeartHorse" method="_on_deck_of_cards_penalty_card_flipped"]
+[connection signal="penalty_card_flipped" from="DeckOfCards" to="ClubHorse" method="_on_deck_of_cards_penalty_card_flipped"]
+[connection signal="penalty_card_flipped" from="DeckOfCards" to="DiamondHorse" method="_on_deck_of_cards_penalty_card_flipped"]
+[connection signal="penalty_card_flipped" from="DeckOfCards" to="SpadeHorse" method="_on_deck_of_cards_penalty_card_flipped"]
+[connection signal="max_horses_in_column" from="InvisibleTrackers" to="DeckOfCards" method="_on_invisible_trackers_max_horses_in_column"]
